@@ -18,11 +18,6 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 #add permissions for the Docker socket file (for mvn)
 sudo chmod 666 /var/run/docker.sock
-#--- GIT --------------------------------------------------------------
-echo 'Installing git...'
-sudo apt-get install git
-echo 'Check git version:'
-git -version
 
 #--- GRAAL VM - JAVA 17-------------------------------------------------------------
 echo 'Installing graalVM.."
