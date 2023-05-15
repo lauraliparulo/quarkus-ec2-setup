@@ -20,21 +20,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo chmod 666 /var/run/docker.sock
 
 #--- GRAAL VM - JAVA 17-------------------------------------------------------------
-echo 'Installing graalVM.."
+echo 'Installing graalVM..'
+rm -rf graal*
 wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.2/graalvm-ce-java17-linux-amd64-22.3.2.tar.gz
 tar -xzf graalvm-ce-java17-linux-amd64-22.3.2.tar.gz
-sudo mv graalvm-ce-java17-linux-amd64-22.3.2 /opt/
-export JAVA_HOME=/opt/graalvm-ce-java17-22.3.2
+sudo mv graalvm-ce-java17-22.3.2 /opt/
+export JAVA_HOME='/opt/graalvm-ce-java17-22.3.2'
 #--- MAVEN -------------------------------------------------------
+rm -rf apache*
+sudo rm -rf /opt/apache-maven*
 wget https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bin.tar.gz
 tar -xzf apache-maven-3.9.2-bin.tar.gz
 sudo mv apache-maven-3.9.2 /opt/
-M2_HOME='/opt/apache-maven-3.9.2'
-
-
-export PATH=/home/ubuntu/graalvm-ce-java17-22.3.2/bin:$PATH
-export PATH="$M2_HOME/bin:$PATH"
-
+export M2_HOME='/opt/apache-maven-3.9.2'
+export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 echo 'Check java version is GRAAL'
 java -version
 echo 'Check mvn version'
