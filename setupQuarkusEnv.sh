@@ -40,6 +40,7 @@ java -version
 echo 'Check mvn version'
 mvn -version
 #--- QPID JMS -------------------------------------------------------
+sudo add-apt-repository ppa:qpid/released
 sudo apt-get install libqpidmessaging2-dev
 sudo apt-get install python-qpid
 sudo apt-get install qpidd qpid-tools
