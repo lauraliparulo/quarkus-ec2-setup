@@ -40,9 +40,8 @@ java -version
 echo 'Check mvn version'
 mvn -version
 #--- QPID JMS -------------------------------------------------------
-sudo add-apt-repository ppa:qpid/released
-sudo apt-get install libqpidmessaging2-dev
-sudo apt-get install python-qpid
-sudo apt-get install qpidd qpid-tools
+# run AMP broker detatched
+docker run -it -d --rm -p 8161:8161 -p 61616:61616 -p 5672:5672 -e AMQ_USER=quarkus -e AMQ_PASSWORD=quarkus quay.io/artemiscloud/activemq-artemis-broker:0.1.4
+
 
 # TODO append export to bash profile
