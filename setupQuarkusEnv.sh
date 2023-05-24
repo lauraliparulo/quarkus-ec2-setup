@@ -39,7 +39,9 @@ echo 'Check java version is GRAAL'
 java -version
 echo 'Check mvn version'
 mvn -version
-
-
+#--- QPID JMS -------------------------------------------------------
+sudo apt-get install libqpidmessaging2-dev
+sudo apt-get install python-qpid
+sudo apt-get install qpidd qpid-tools
 
 # TODO append export to bash profile
