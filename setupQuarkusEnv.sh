@@ -22,6 +22,7 @@ sudo chmod 666 /var/run/docker.sock
 #--- GRAAL VM - JAVA 17-------------------------------------------------------------
 echo 'Installing graalVM..'
 rm -rf graal*
+sudo rm -rf /opt/graal*
 wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.2/graalvm-ce-java17-linux-amd64-22.3.2.tar.gz
 tar -xzf graalvm-ce-java17-linux-amd64-22.3.2.tar.gz
 sudo mv graalvm-ce-java17-22.3.2 /opt/
